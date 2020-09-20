@@ -50,7 +50,13 @@ shinyServer(function(input, output, session){
   # file, it will be a data frame with 'name', 'size', 'type', and 'datapath' 
   # columns. The 'datapath' column will contain the local filenames where the 
   # data can be found.
-
+  
+  url <- a("Sample File", href="https://raw.githubusercontent.com/gtatters/CosinorFit/master/AutorhythmSample.csv")
+  
+  output$tab <- renderUI({
+    tagList("", url)
+  })
+  
   contentsrea <- reactive({
     
     inFile <- input$file1
@@ -128,7 +134,7 @@ shinyServer(function(input, output, session){
 
     plot(Hour[ind], Response[ind], xaxp=c(0,24,4), pch=20, 
         xlab="Hour of Day", ylab="Temperature (°C)")
-    lines(Hour[ind], Response[ind])
+    #lines(Hour[ind], Response[ind])
     lines(newtime, fitresponse, lwd=3, col="grey")
     abline(mesor, 0, lwd=2, lty=2, col="black")
     abline(mesor+amplitude, 0, lwd=1, lty=2, col="red")

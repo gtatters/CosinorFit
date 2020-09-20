@@ -24,15 +24,18 @@ shinyUI(pageWithSidebar(
                 choices=names(d), selected=names(d)[[1]]),
     
     selectInput('ycol', 'Select the Response Variable', 
-                choices=names(d), selected=names(d)[[2]]),
+                choices=names(d), selected=names(d)[[3]]),
     br(),
-    HTML("https://TattersallLab.com")
+    helpText("Glenn Tattersall, PhD"),
+    HTML("https://TattersallLab.com"),
+    br(),
   ),
   
   mainPanel(
     tabsetPanel(
-      
       tabPanel("Data",
+               h5("If the data window is blank or to guide on how to set up you file, download the sample file here: "),
+               uiOutput("tab"),
                tableOutput("contents")
       ),
       tabPanel("Plot",
