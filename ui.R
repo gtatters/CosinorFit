@@ -24,7 +24,9 @@ shinyUI(pageWithSidebar(
                 choices=names(d), selected=names(d)[[1]]),
     
     selectInput('ycol', 'Select the Response Variable', 
-                choices=names(d), selected=names(d)[[2]])
+                choices=names(d), selected=names(d)[[2]]),
+    br(),
+    HTML("https://TattersallLab.com")
   ),
   
   mainPanel(
