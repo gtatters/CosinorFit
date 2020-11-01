@@ -46,11 +46,13 @@ shinyUI(pageWithSidebar(
       tabPanel("Plot",
                h5("The chart shows a best fit sinusoidal plot through the response variable."),
                plotOutput("mainPlot")
-          
+
       ),
       tabPanel("Residuals",
                h5("The residuals allow you to examine the appropriateness of the fit."),
-               plotOutput("residPlot")
+               plotOutput("residPlot"),
+               h5("For help in interpreting these plots, see: "),
+               HTML("https://data.library.virginia.edu/diagnostic-plots/")
                
       ),
       tabPanel("Statistics",

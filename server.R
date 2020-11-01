@@ -53,9 +53,15 @@ shinyServer(function(input, output, session){
   
   url <- a("Sample File", href="https://raw.githubusercontent.com/gtatters/CosinorFit/master/AutorhythmSample.csv")
   
+  #diagurl<-a("Help with Diagnostics", href="https://data.library.virginia.edu/diagnostic-plots/")
+  
   output$tab <- renderUI({
     tagList("", url)
   })
+  
+#  output$diag <- renderUI({
+#    tagList("", diagurl)
+#  })
   
   contentsrea <- reactive({
 

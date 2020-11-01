@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Understanding Diagnostic Plots for Linear Regression Analysis
 
-You ran a linear regression analysis and the stats software spit out a bunch of numbers. The results were significant (or not). You might think that you’re done with analysis. No, not yet. After running a regression analysis, you should check if the model works well for data.
+You ran a linear regression analysis and the stats software spit out a bunch of numbers. The results were significant (or not). You might think that you’re done with analysis. No, not yet. After running a regression analysis, you should check if the model works well for data. 
 
 We can check if a model works well for data in many different ways. We pay great attention to regression results, such as slope coefficients, p-values, or R2 that tell us how well a model represents given data. That’s not the whole picture though. Residuals could show how poorly a model represents data. Residuals are leftover of the outcome variable after fitting a model (predictors) to data and they could reveal unexplained patterns in the data by the fitted model. Using this information, not only could you check if linear regression assumptions are met, but you could improve your model in an exploratory way.
 
