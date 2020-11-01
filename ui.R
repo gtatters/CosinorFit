@@ -39,7 +39,7 @@ shinyUI(pageWithSidebar(
   mainPanel(
     tabsetPanel(
       tabPanel("Data",
-               h5("If the data window is blank and to guide on how to set up your file, download the sample file here: "),
+               h5("If the data window is blank, download the sample file here for a guide on how to set up your data: "),
                uiOutput("tab"),
                tableOutput("contents")
       ),
