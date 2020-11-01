@@ -25,7 +25,12 @@ shinyUI(pageWithSidebar(
     
     selectInput('ycol', 'Select the Response Variable', 
                 choices=names(d), selected=names(d)[[3]]),
+    
+    sliderInput("digs", "Significant Digits for Equation Parameters:",
+                min = 2, max = 10, value = 5),
+    
     br(),
+    
     helpText("Glenn Tattersall, PhD"),
     HTML("https://TattersallLab.com"),
     br(),
@@ -34,7 +39,7 @@ shinyUI(pageWithSidebar(
   mainPanel(
     tabsetPanel(
       tabPanel("Data",
-               h5("If the data window is blank or to guide on how to set up you file, download the sample file here: "),
+               h5("If the data window is blank and to guide on how to set up your file, download the sample file here: "),
                uiOutput("tab"),
                tableOutput("contents")
       ),

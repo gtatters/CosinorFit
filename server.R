@@ -58,7 +58,7 @@ shinyServer(function(input, output, session){
   })
   
   contentsrea <- reactive({
-    
+
     inFile <- input$file1
     if (is.null(inFile))
        return(NULL)
@@ -87,9 +87,10 @@ shinyServer(function(input, output, session){
   
   
  output$mainPlot <- renderPlot({
-   inFile <- input$file1
-   if (is.null(inFile))
-     return(NULL)
+  
+    inFile <- input$file1
+    if (is.null(inFile))
+         return(NULL)
     d<-read.csv(inFile$datapath, header=input$header)
     d<-d[, c(input$xcol, input$ycol)]
     
@@ -133,7 +134,7 @@ shinyServer(function(input, output, session){
     ind<-order(Hour)
 
     plot(Hour[ind], Response[ind], xaxp=c(0,24,4), pch=20, 
-        xlab="Hour of Day", ylab="Temperature (°C)")
+        xlab=input$xcol, ylab=input$ycol)
     #lines(Hour[ind], Response[ind])
     lines(newtime, fitresponse, lwd=3, col="grey")
     abline(mesor, 0, lwd=2, lty=2, col="black")
@@ -214,7 +215,7 @@ shinyServer(function(input, output, session){
     r.squared<-summary(lm1)$adj.r.squared
     pval<-anova(lm1)$`Pr(>F)`[1]
     
-    digs<-10
+    digs<-input$digs
     phasevalues<-data.frame(format(mesor, digits=digs), 
                             format(amplitude, digits=digs),
                             format(acrotime, digits=digs),
