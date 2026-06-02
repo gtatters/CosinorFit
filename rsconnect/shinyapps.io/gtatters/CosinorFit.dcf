@@ -5,8 +5,8 @@ account: gtatters
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 809933
-bundleId: 3807668
+bundleId: 3807700
 url: https://gtatters.shinyapps.io/CosinorFit/
-when: 1604257102.41243
+when: 1604257975.52203
 asMultiple: FALSE
 asStatic: FALSE
